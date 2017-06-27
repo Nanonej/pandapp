@@ -1,0 +1,39 @@
+%html
+	%head
+		%title App
+		%link{:rel => "stylesheet", :type => "text/css", :href => "css/style.css"}
+		%script{:src  => "script/Chart.js"}
+		%script{:src  => "script/parse.js"}
+	%body
+		%header
+			.first
+				%h2 Champion Filters
+
+				%input.search{:type => "text", :name => "search", :placeholder => "Search Champions", :value => "", :oninput => "search = this.value; getDataFromJson();"}
+
+			%h3 Roles:
+			.inputs
+				%label.filters{:for => "assassin"} Assassin
+				%input.filters{:type => "checkbox", :name => "assassin", :value => "assassin", :checked => true, :onclick => "filters.Assassin = this.checked; getDataFromJson();"}
+
+				%label.filters{:for => "fighter"} Fighter
+				%input.filters{:type => "checkbox", :name => "fighter", :value => "fighter", :checked => true, :onclick => "filters.Fighter = this.checked; getDataFromJson();"}
+
+				%label.filters{:for => "mage"} Mage
+				%input.filters{:type => "checkbox", :name => "mage", :value => "mage", :checked => true, :onclick => "filters.Mage = this.checked; getDataFromJson();"}
+
+				%label.filters{:for => "support"} Support
+				%input.filters{:type => "checkbox", :name => "support", :value => "support", :checked => true, :onclick => "filters.Support = this.checked; getDataFromJson();"}
+
+				%label.filters{:for => "tank"} Tank
+				%input.filters{:type => "checkbox", :name => "tank", :value => "tank", :checked => true, :onclick => "filters.Tank = this.checked; getDataFromJson();"}
+
+				%label.filters{:for => "marksman"} Marksman
+				%input.filters{:type => "checkbox", :name => "marksman", :value => "marksman", :checked => true, :onclick => "filters.Marksman = this.checked; getDataFromJson();"}
+
+		%h1 Champion Grid
+		#grid
+
+		#modal
+			#modal-content
+				-# %span.close &times;

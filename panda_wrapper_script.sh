@@ -2,7 +2,7 @@
 
 #Starting first process : unicorn
 first_process="unicorn"
-/usr/local/bundle/bin/unicorn -c /var/www/pandapp/unicorn.rb
+/usr/local/bundle/bin/unicorn -c path/to/unicorn.rb -E development -D
 status=$?
 if [ $status -ne 0 ]; then
 	echo "Process $first_process failed to start with error $status"

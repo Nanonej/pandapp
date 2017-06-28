@@ -2,7 +2,7 @@
 
 #Starting first process : unicorn
 first_process="unicorn"
-/usr/local/bundle/bin/unicorn -c path/to/unicorn.rb -E development -D
+/usr/local/bundle/bin/unicorn -c /var/www/pandapp/unicorn.rb -E development -D
 status=$?
 if [ $status -ne 0 ]; then
 	echo "Process $first_process failed to start with error $status"
@@ -10,7 +10,7 @@ if [ $status -ne 0 ]; then
 fi
 #Starting second process : nginx
 second_process="nginx"
-/usr/sbin/nginx -c /etc/nginx/nginx.conf
+/etc/init.d/nginx start
 status=$?
 if [ $status -ne 0 ]; then
 	echo "Process $second_process failed to start with error $status"

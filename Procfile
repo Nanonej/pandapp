@@ -1,2 +1,2 @@
-web: unicorn -c /var/www/pandapp/unicorn.rb -E development -D
-nginx: /etc/init.d/nginx start
+web: bundle exec unicorn -c /var/www/pandapp/unicorn.rb
+nginx: /usr/sbin/nginx -c /etc/nginx/nginx.conf

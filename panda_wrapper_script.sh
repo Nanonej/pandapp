@@ -10,7 +10,7 @@ if [ $status -ne 0 ]; then
 fi
 #Starting second process : nginx
 second_process="nginx"
-/etc/init.d/nginx start
+/usr/sbin/nginx -c /etc/nginx/nginx.conf
 status=$?
 if [ $status -ne 0 ]; then
 	echo "Process $second_process failed to start with error $status"
